@@ -1,0 +1,31 @@
+{
+	"geode": "3.6.1",
+	"gd": {
+		"win": "2.206",
+		"android": "2.206"
+	},
+	"id": "legowiifun.cheat_api",
+	"name": "Cheat API",
+	"version": "v1.0.0",
+	"developer": "legowiifun",
+	"description": "API for cheat mods to communicate with cheat indicators",
+	"api": {
+		"include": [
+			"include/*.hpp"
+		]
+	},
+	"settings": {
+		"ruleset": {
+			"name": "ruleset",
+			"description": "What ruleset do you want to play with.\n0: Robtop leaderboards/verification, ",
+			"type": "int",
+			"default": 0,
+			"min": 0,
+			"max": 4,
+			"control": {
+				"arrows": true
+			}
+
+		}
+	}
+}
