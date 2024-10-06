@@ -9,11 +9,13 @@ project(CheatAPI VERSION 1.0.0)
 # Set up the mod binary
 add_library(${PROJECT_NAME} SHARED
      "src/cheatAPI.cpp"
-    # "src/customSetting.cpp"
     "include/cheatAPI.hpp"
     # Add any extra C++ source files here
-    #"src/Tester.cpp"
 )
+
+if (PROJECT_IS_TOP_LEVEL)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE LEGOWIIFUN_CHEAT_API_EXPORTING)
+endif()
 
 if (NOT DEFINED ENV{GEODE_SDK})
     message(FATAL_ERROR "Unable to find Geode SDK! Please define GEODE_SDK environment variable to point to Geode")

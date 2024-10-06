@@ -4,32 +4,56 @@
 #include <Geode/Geode.hpp>
 #include "../include/cheatAPI.hpp"
 
-/**
- * Brings cocos2d and all Geode namespaces to the current scope.
- */
-using namespace geode::prelude;
-
 enum rulesets cheatAPI::setSetting() {
-	int setting = Mod::get()->getSettingValue<int64_t>("ruleset");
-	return (static_cast<enum rulesets>(setting));
+	auto setting = geode::prelude::Mod::get()->getSettingValue<std::string>("ruleset");
+	if (setting == "Robtop") {
+		return rulesets::ROBTOP;
+	}
+	else if (setting == "Pointercrate") {
+		return rulesets::DEMONLIST;
+	}
+	else if (setting == "Geometry Dash Demon Ladder") {
+		return rulesets::GDDL;
+	}
+	else if (setting == "Mod Makers Opinion") {
+		return rulesets::MODMAKEROPINION;
+	}
+	else if (setting == "All Rated Extreme Demons List") {
+		return rulesets::AREDL;
+	}
+	else {
+		return rulesets::PEMONLIST;
+	}
 }
 
-bool cheatAPI::isCheating(enum rulesets r) {
+static enum rulesets rs;
+static int activeCheatRobtop;
+static int activeCheatDemonlist;
+static int activeCheatGDDL;
+static int activeCheatModMakerOpinion;
+static int activeCheatAREDL;
+static int activeCheatPemonlist;
+
+
+bool cheatAPI::isCheating(rulesets r) {
 	switch (r) {
 	case ROBTOP:
-		return (activeCheatRobtop > 1);
+		return (activeCheatRobtop > 0);
 		break;
 	case MODMAKEROPINION:
-		return (activeCheatModMakerOpinion > 1);
+		return (activeCheatModMakerOpinion > 0);
 		break;
 	case DEMONLIST:
-		return (activeCheatDemonlist > 1);
+		return (activeCheatDemonlist > 0);
 		break;
 	case GDDL:
-		return (activeCheatGDDL > 1);
+		return (activeCheatGDDL > 0);
 		break;
 	case AREDL:
-		return (activeCheatAREDL > 1);
+		return (activeCheatAREDL > 0);
+		break;
+	case PEMONLIST:
+		return (activeCheatPemonlist > 0);
 		break;
 	default:
 		return false;
@@ -40,7 +64,7 @@ bool cheatAPI::isCheating() {
 	return isCheating(setSetting());
 }
 
-void cheatAPI::setCheat(enum rulesets r) {
+void cheatAPI::setCheat(rulesets r) {
 	switch (r) {
 	case ROBTOP:
 		activeCheatRobtop++;
@@ -57,14 +81,17 @@ void cheatAPI::setCheat(enum rulesets r) {
 	case AREDL:
 		activeCheatAREDL++;
 		break;
+	case PEMONLIST:
+		activeCheatPemonlist++;
+		break;
 	}
 }
 void cheatAPI::setCheat() {
-	for (int i = 0; i < 5; i++) {
-		setCheat(static_cast<enum rulesets>(i));
+	for (int i = 0; i < 6; i++) {
+		setCheat(static_cast<rulesets>(i));
 	}
 }
-void cheatAPI::endCheat(enum rulesets r) {
+void cheatAPI::endCheat(rulesets r) {
 	switch (r) {
 	case ROBTOP:
 		activeCheatRobtop--;
@@ -81,10 +108,13 @@ void cheatAPI::endCheat(enum rulesets r) {
 	case AREDL:
 		activeCheatAREDL--;
 		break;
+	case PEMONLIST:
+		activeCheatPemonlist--;
+		break;
 	}
 }
 void cheatAPI::endCheat() {
-	for (int i = 0; i < 5; i++) {
-		endCheat(static_cast<enum rulesets>(i));
+	for (int i = 0; i < 6; i++) {
+		endCheat(static_cast<rulesets>(i));
 	}
 }

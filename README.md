@@ -3,8 +3,12 @@
 To use, use #include <legowiifun.cheatAPI/include/isCheating.hpp>
 
 enum rulesets: 
-ROBTOP: Will levels verified with it get rated? Can it get you leaderboard banned? What does Robtop Think?
+ROBTOP: Will levels verified with it get rated? Can it get you leaderboard banned?
+DEMONLIST: Based on https://pointercrate.com/demonlist/
+GDDL: Based on gdladder.com
 MODMAKEROPINION: What is your opinion on it? 
+AREDL: Based on aredl.net
+PEMONLIST: based on pemonlist.com
 
 bool cheatAPI.isCheating(); returns true if the player is cheating according to the ruleset designated in the mod settings, and false if they are not
 bool cheatAPI.isCheating(Ruleset rs); returns true if the player is cheating according to the ruleset that is passed in, and false if they are not

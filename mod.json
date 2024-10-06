@@ -1,5 +1,5 @@
 {
-	"geode": "3.6.1",
+	"geode": "3.8.1",
 	"gd": {
 		"win": "2.206",
 		"android": "2.206"
@@ -11,21 +11,18 @@
 	"description": "API for cheat mods to communicate with cheat indicators",
 	"api": {
 		"include": [
-			"include/*.hpp"
+			"include/cheatAPI.hpp"
 		]
 	},
 	"settings": {
 		"ruleset": {
 			"name": "ruleset",
-			"description": "What ruleset do you want to play with.\n0: Robtop leaderboards/verification, ",
-			"type": "int",
-			"default": 0,
-			"min": 0,
-			"max": 4,
-			"control": {
-				"arrows": true
-			}
-
+			"description": "What ruleset do you want to play with.",
+			"type": "string",
+			"default": "Robtop",
+			"one-of": [
+				"Robtop", "Pointercrate", "Geometry Dash Demon Ladder", "Mod Makers Opinion", "All Rated Extreme Demons List", "pemonlist.com"
+			]
 		}
 	}
 }
