@@ -6,7 +6,7 @@
 	},
 	"id": "legowiifun.cheat_api",
 	"name": "Cheat API",
-	"version": "v1.0.0",
+	"version": "v1.0.1",
 	"developer": "legowiifun",
 	"description": "API for cheat mods to communicate with cheat indicators",
 	"api": {
@@ -21,10 +21,15 @@
 			"type": "string",
 			"default": "Robtop",
 			"one-of": [
-				"Robtop", "Pointercrate", "Geometry Dash Demon Ladder", "Mod Makers Opinion", "All Rated Extreme Demons List", "pemonlist.com"
+				"Robtop",
+				"Pointercrate",
+				"Geometry Dash Demon Ladder",
+				"Mod Makers Opinion",
+				"All Rated Extreme Demons List",
+				"pemonlist.com"
 			]
 		}
-	}, 
-	"repository:": "https://github.com/legowiifun/GeometryDashCheatAPI"
-
+	},
+	"repository": "https://github.com/legowiifun/GeometryDashCheatAPI",
+	"tags":  ["gameplay","offline","utility","developer","cheats"]
 }
