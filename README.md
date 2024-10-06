@@ -1,6 +1,6 @@
 # CheatAPI
 
-To use, use #include <legowiifun.cheatAPI/include/isCheating.hpp>
+To use, use #include <legowiifun.cheatAPI/include/cheatAPI.hpp>
 
 enum rulesets: 
 ROBTOP: Will levels verified with it get rated? Can it get you leaderboard banned?
