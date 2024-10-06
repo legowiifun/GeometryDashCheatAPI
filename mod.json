@@ -24,5 +24,8 @@
 				"Robtop", "Pointercrate", "Geometry Dash Demon Ladder", "Mod Makers Opinion", "All Rated Extreme Demons List", "pemonlist.com"
 			]
 		}
+	}, 
+	"links:" {
+		"source": "https://github.com/legowiifun/GeometryDashCheatAPI"
 	}
 }
