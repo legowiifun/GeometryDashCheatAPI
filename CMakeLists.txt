@@ -4,13 +4,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_OSX_ARCHITECTURES "arm64;x86_64")
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
-project(CheatAPI VERSION 1.0.1)
+project(CheatAPI VERSION 1.1.0)
 
 # Set up the mod binary
 add_library(${PROJECT_NAME} SHARED
      "src/cheatAPI.cpp"
     "include/cheatAPI.hpp"
     # Add any extra C++ source files here
+ "src/optionalEvents.cpp"
+ "include/optionalEvents.hpp"
 )
 
 if (PROJECT_IS_TOP_LEVEL)
