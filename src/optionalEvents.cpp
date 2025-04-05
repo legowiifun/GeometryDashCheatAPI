@@ -1,12 +1,18 @@
 #include <Geode/Geode.hpp>
 #include <Geode/loader/Event.hpp>
 #include "../include/cheatAPI.hpp"
-#include "../include/optionalEvents.hpp"
-
+#include<Geode/loader/Dispatch.hpp>
 
 using namespace geode::prelude;
 
 // set up filters
+using EventStartCheatAll = geode::DispatchEvent<>;
+using EventStartCheatOne = geode::DispatchEvent<std::string>;
+using EventEndCheatAll = geode::DispatchEvent<>;
+using EventEndCheatOne = geode::DispatchEvent<std::string>;
+using EventIsCheating = geode::DispatchEvent<bool*>;
+using EventIsCheatingSpecific = geode::DispatchEvent<std::string, bool*>;
+
 template <class>
 struct ToFilterImpl;
 
