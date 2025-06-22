@@ -8,7 +8,7 @@ else()
 endif()
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
-project(CheatAPI VERSION 1.2.0)
+project(CheatAPI VERSION 1.2.1)
 
 # Set up the mod binary
 add_library(${PROJECT_NAME} SHARED

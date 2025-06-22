@@ -1,3 +1,6 @@
+# 1.2.1
+- JIT-less IOS support!
+
 # 1.2.0
 - IOS support
 - Added support for geode 4.3.0 event export macros
