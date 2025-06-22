@@ -8,7 +8,7 @@
 	},
 	"id": "legowiifun.cheat_api",
 	"name": "Cheat API",
-	"version": "v1.2.1",
+	"version": "v1.2.2",
 	"developer": "legowiifun",
 	"description": "API for cheat mods to communicate with cheat indicators",
 	"api": {
@@ -33,5 +33,5 @@
 		}
 	},
 	"repository": "https://github.com/legowiifun/GeometryDashCheatAPI",
-	"tags":  ["gameplay","offline","utility","developer","cheat"]
+	"tags":  ["gameplay","offline","utility","developer","cheat","api"]
 }
