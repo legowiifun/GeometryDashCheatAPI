@@ -1,3 +1,6 @@
+# 1.2.2
+- Add API Tag
+
 # 1.2.1
 - JIT-less IOS support!
 
