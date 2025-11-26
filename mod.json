@@ -32,6 +32,8 @@
 			]
 		}
 	},
-	"repository": "https://github.com/legowiifun/GeometryDashCheatAPI",
+	"links":{
+		"source":"https://github.com/legowiifun/GeometryDashCheatAPI"
+	},
 	"tags":  ["gameplay","offline","utility","developer","cheat","api"]
 }
