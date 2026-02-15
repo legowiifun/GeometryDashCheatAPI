@@ -1,14 +1,14 @@
 {
-	"geode": "4.10.1",
+	"geode": "5.0.0-beta.2",
 	"gd": {
-		"win": "2.2074",
-		"android": "2.2074",
-		"mac": "2.2074",
-		"ios": "2.2074"
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
 	},
 	"id": "legowiifun.cheat_api",
 	"name": "Cheat API",
-	"version": "v1.2.2",
+	"version": "v1.2.3",
 	"developer": "legowiifun",
 	"description": "API for cheat mods to communicate with cheat indicators",
 	"api": {

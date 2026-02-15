@@ -1,3 +1,7 @@
+# 1.2.3
+- Removed the dispatch-events API
+- GD 2.2081/geode v5 supports
+
 # 1.2.2
 - Add API Tag
 
