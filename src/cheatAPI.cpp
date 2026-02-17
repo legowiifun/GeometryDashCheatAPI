@@ -119,7 +119,7 @@ void cheatAPI::endCheat() {
 		endCheat(static_cast<rulesets>(i));
 	}
 }
-geode::Result<bool> cheatAPIEvents::isCheatingOne(std::string str) {
+geode::Result<bool> cheatAPIEvents::isCheatingSpecific(std::string str) {
 	if (str == "ROBTOP") {
 		return geode::Ok(cheatAPI::isCheating(ROBTOP));
 	}
@@ -142,7 +142,7 @@ geode::Result<bool> cheatAPIEvents::isCheatingOne(std::string str) {
 		return geode::Ok(cheatAPI::isCheating());
 	}
 }
-geode::Result<bool> cheatAPIEvents::isCheatingSpecific() {
+geode::Result<bool> cheatAPIEvents::isCheatingGeneral() {
 	return geode::Ok(cheatAPI::isCheating());
 }
 geode::Result<void> cheatAPIEvents::setCheatingOne(std::string str) {
