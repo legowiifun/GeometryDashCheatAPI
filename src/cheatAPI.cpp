@@ -119,97 +119,81 @@ void cheatAPI::endCheat() {
 		endCheat(static_cast<rulesets>(i));
 	}
 }
-geode::Result<bool> cheatAPIEvents::isCheatingSpecific(std::string str) {
+bool cheatAPIEvents::isCheatingSpecific(std::string str) {
 	if (str == "ROBTOP") {
-		return geode::Ok(cheatAPI::isCheating(ROBTOP));
+		return cheatAPI::isCheating(ROBTOP);
 	}
 	else if (str == "DEMONLIST") {
-		return geode::Ok(cheatAPI::isCheating(DEMONLIST));
+		return cheatAPI::isCheating(DEMONLIST);
 	}
 	else if (str == "GDDL") {
-		return geode::Ok(cheatAPI::isCheating(GDDL));
+		return cheatAPI::isCheating(GDDL);
 	}
 	else if (str == "MODMAKEROPINION") {
-		return geode::Ok(cheatAPI::isCheating(MODMAKEROPINION));
+		return cheatAPI::isCheating(MODMAKEROPINION);
 	}
 	else if (str == "AREDL") {
-		return geode::Ok(cheatAPI::isCheating(AREDL));
+		return cheatAPI::isCheating(AREDL);
 	}
 	else if (str == "PEMONLIST") {
-		return geode::Ok(cheatAPI::isCheating(PEMONLIST));
+		return cheatAPI::isCheating(PEMONLIST);
 	}
 	else {
-		return geode::Ok(cheatAPI::isCheating());
+		return cheatAPI::isCheating();
 	}
 }
-geode::Result<bool> cheatAPIEvents::isCheatingGeneral() {
-	return geode::Ok(cheatAPI::isCheating());
+bool cheatAPIEvents::isCheatingGeneral() {
+	return cheatAPI::isCheating();
 }
-geode::Result<void> cheatAPIEvents::setCheatingOne(std::string str) {
+void cheatAPIEvents::setCheatingOne(std::string str) {
 	if (str == "ROBTOP") {
 		cheatAPI::setCheat(ROBTOP);
-		return geode::Ok();
 	}
 	else if (str == "DEMONLIST") {
 		cheatAPI::setCheat(DEMONLIST);
-		return geode::Ok();
 	}
 	else if (str == "GDDL") {
 		cheatAPI::setCheat(GDDL);
-		return geode::Ok();
 	}
 	else if (str == "MODMAKEROPINION") {
 		cheatAPI::setCheat(MODMAKEROPINION);
-		return geode::Ok();
 	}
 	else if (str == "AREDL") {
 		cheatAPI::setCheat(AREDL);
-		return geode::Ok();
 	}
 	else if (str == "PEMONLIST") {
 		cheatAPI::setCheat(PEMONLIST);
-		return geode::Ok();
 	}
 	else {
 		cheatAPI::setCheat();
-		return geode::Ok();
 	}
 }
-geode::Result<void> cheatAPIEvents::setCheatingAll() {
+void cheatAPIEvents::setCheatingAll() {
 	cheatAPI::setCheat();
-	return geode::Ok();
 }
-geode::Result<void> cheatAPIEvents::endCheatingOne(std::string str) {
+void cheatAPIEvents::endCheatingOne(std::string str) {
 	if (str == "ROBTOP") {
 		cheatAPI::endCheat(ROBTOP);
-		return geode::Ok();
 	}
 	else if (str == "DEMONLIST") {
 		cheatAPI::endCheat(DEMONLIST);
-		return geode::Ok();
 	}
 	else if (str == "GDDL") {
 		cheatAPI::endCheat(GDDL);
-		return geode::Ok();
 	}
 	else if (str == "MODMAKEROPINION") {
 		cheatAPI::endCheat(MODMAKEROPINION);
-		return geode::Ok();
 	}
 	else if (str == "AREDL") {
 		cheatAPI::endCheat(AREDL);
-		return geode::Ok();
 	}
 	else if (str == "PEMONLIST") {
 		cheatAPI::endCheat(PEMONLIST);
-		return geode::Ok();
 	}
 	else {
 		cheatAPI::endCheat();
-		return geode::Ok();
 	}
 }
-geode::Result<void> cheatAPIEvents::endCheatingAll() {
+void cheatAPIEvents::endCheatingAll() {
 	cheatAPI::endCheat();
-	return geode::Ok();
 }

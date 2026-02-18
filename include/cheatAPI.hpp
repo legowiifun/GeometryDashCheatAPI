@@ -42,10 +42,10 @@ class CHEAT_API_DLL cheatAPI {
 		static void endCheat();
 };
 namespace cheatAPIEvents {
-	inline geode::Result<bool> isCheatingSpecific(std::string str) GEODE_EVENT_EXPORT(&isCheatingSpecific, (str));
-	inline geode::Result<bool> isCheatingGeneral() GEODE_EVENT_EXPORT(&isCheatingGeneral, ());
-	inline geode::Result<void> setCheatingOne(std::string str) GEODE_EVENT_EXPORT(&setCheatingOne, (str));
-	inline geode::Result<void> setCheatingAll() GEODE_EVENT_EXPORT(&setCheatingAll, ());
-	inline geode::Result<void> endCheatingOne(std::string str) GEODE_EVENT_EXPORT(&endCheatingOne, (str));
-	inline geode::Result<void> endCheatingAll() GEODE_EVENT_EXPORT(&endCheatingAll, ());
+	inline bool isCheatingSpecific(std::string str) GEODE_EVENT_EXPORT_NORES(&isCheatingSpecific, (str));
+	inline bool isCheatingGeneral() GEODE_EVENT_EXPORT_NORES(&isCheatingGeneral, ());
+	inline void setCheatingOne(std::string str) GEODE_EVENT_EXPORT_NORES(&setCheatingOne, (str));
+	inline void setCheatingAll() GEODE_EVENT_EXPORT_NORES(&setCheatingAll, ());
+	inline void endCheatingOne(std::string str) GEODE_EVENT_EXPORT_NORES(&endCheatingOne, (str));
+	inline void endCheatingAll() GEODE_EVENT_EXPORT_NORES(&endCheatingAll, ());
 }
