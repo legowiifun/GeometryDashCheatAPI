@@ -1,5 +1,10 @@
 # CheatAPI
 
+![Mod Version](https://api.geode-sdk.org/v1/mods/legowiifun.cheat_api/status_badge?stat=version)
+![Downloads](https://api.geode-sdk.org/v1/mods/legowiifun.cheat_api/status_badge?stat=downloads)
+![GD Version](https://api.geode-sdk.org/v1/mods/legowiifun.cheat_api/status_badge?stat=gd_version)
+![Geode Version](https://api.geode-sdk.org/v1/mods/legowiifun.cheat_api/status_badge?stat=geode_version)
+
 To use as a dependency, use `#include <legowiifun.cheatAPI/include/cheatAPI.hpp>`, and in mod.json, under dependencies, put 
 ```
 	"legowiifun.cheat_api": {
