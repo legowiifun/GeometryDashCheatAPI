@@ -4,6 +4,7 @@
 #include <Geode/Geode.hpp>
 #define GEODE_DEFINE_EVENT_EXPORTS
 #include "../include/cheatAPI.hpp"
+#include <unordered_map>
 
 enum rulesets cheatAPI::setSetting() {
 	auto setting = geode::prelude::Mod::get()->getSettingValue<std::string>("ruleset");
@@ -28,37 +29,41 @@ enum rulesets cheatAPI::setSetting() {
 }
 
 static enum rulesets rs;
-static int activeCheatRobtop;
+/*static int activeCheatRobtop;
 static int activeCheatDemonlist;
 static int activeCheatGDDL;
 static int activeCheatModMakerOpinion;
 static int activeCheatAREDL;
-static int activeCheatPemonlist;
+static int activeCheatPemonlist;*/
+static std::unordered_map<std::string, int> activeCheats;
 
+std::string enumToString(rulesets r) {
+	switch (r) {
+		case ROBTOP:
+			return "ROBTOP";
+			break;
+		case MODMAKEROPINION:
+			return "MODMAKEROPINION";
+			break;
+		case DEMONLIST:
+			return "DEMONLIST";
+			break;
+		case GDDL:
+			return "GDDL";
+			break;
+		case AREDL:
+			return "AREDL";
+			break;
+		case PEMONLIST:
+			return "PEMONLIST";
+			break;
+		default:
+			return "";
+	} 
+}
 
 bool cheatAPI::isCheating(rulesets r) {
-	switch (r) {
-	case ROBTOP:
-		return (activeCheatRobtop > 0);
-		break;
-	case MODMAKEROPINION:
-		return (activeCheatModMakerOpinion > 0);
-		break;
-	case DEMONLIST:
-		return (activeCheatDemonlist > 0);
-		break;
-	case GDDL:
-		return (activeCheatGDDL > 0);
-		break;
-	case AREDL:
-		return (activeCheatAREDL > 0);
-		break;
-	case PEMONLIST:
-		return (activeCheatPemonlist > 0);
-		break;
-	default:
-		return false;
-	} 
+	return activeCheats[enumToString(r)]>0;
 }
 
 bool cheatAPI::isCheating() {
@@ -66,134 +71,45 @@ bool cheatAPI::isCheating() {
 }
 
 void cheatAPI::setCheat(rulesets r) {
-	switch (r) {
-	case ROBTOP:
-		activeCheatRobtop++;
-		break;
-	case MODMAKEROPINION:
-		activeCheatModMakerOpinion++;
-		break;
-	case DEMONLIST:
-		activeCheatDemonlist++;
-		break;
-	case GDDL:
-		activeCheatGDDL++;
-		break;
-	case AREDL:
-		activeCheatAREDL++;
-		break;
-	case PEMONLIST:
-		activeCheatPemonlist++;
-		break;
-	}
+	activeCheats[enumToString(r)]++;
 }
 void cheatAPI::setCheat() {
-	for (int i = 0; i < 6; i++) {
-		setCheat(static_cast<rulesets>(i));
+	for (std::pair pair: activeCheats) {
+		pair.second++;
 	}
 }
 void cheatAPI::endCheat(rulesets r) {
-	switch (r) {
-	case ROBTOP:
-		activeCheatRobtop--;
-		break;
-	case MODMAKEROPINION:
-		activeCheatModMakerOpinion--;
-		break;
-	case DEMONLIST:
-		activeCheatDemonlist--;
-		break;
-	case GDDL:
-		activeCheatGDDL--;
-		break;
-	case AREDL:
-		activeCheatAREDL--;
-		break;
-	case PEMONLIST:
-		activeCheatPemonlist--;
-		break;
-	}
+	activeCheats[enumToString(r)]--;
 }
 void cheatAPI::endCheat() {
-	for (int i = 0; i < 6; i++) {
-		endCheat(static_cast<rulesets>(i));
+	for (std::pair pair: activeCheats) {
+		pair.second--;
 	}
 }
 bool cheatAPIEvents::isCheatingSpecific(std::string str) {
-	if (str == "ROBTOP") {
-		return cheatAPI::isCheating(ROBTOP);
-	}
-	else if (str == "DEMONLIST") {
-		return cheatAPI::isCheating(DEMONLIST);
-	}
-	else if (str == "GDDL") {
-		return cheatAPI::isCheating(GDDL);
-	}
-	else if (str == "MODMAKEROPINION") {
-		return cheatAPI::isCheating(MODMAKEROPINION);
-	}
-	else if (str == "AREDL") {
-		return cheatAPI::isCheating(AREDL);
-	}
-	else if (str == "PEMONLIST") {
-		return cheatAPI::isCheating(PEMONLIST);
-	}
-	else {
-		return cheatAPI::isCheating();
-	}
+	return activeCheats.at(str)>0;
 }
 bool cheatAPIEvents::isCheatingGeneral() {
 	return cheatAPI::isCheating();
 }
 void cheatAPIEvents::setCheatingOne(std::string str) {
-	if (str == "ROBTOP") {
-		cheatAPI::setCheat(ROBTOP);
-	}
-	else if (str == "DEMONLIST") {
-		cheatAPI::setCheat(DEMONLIST);
-	}
-	else if (str == "GDDL") {
-		cheatAPI::setCheat(GDDL);
-	}
-	else if (str == "MODMAKEROPINION") {
-		cheatAPI::setCheat(MODMAKEROPINION);
-	}
-	else if (str == "AREDL") {
-		cheatAPI::setCheat(AREDL);
-	}
-	else if (str == "PEMONLIST") {
-		cheatAPI::setCheat(PEMONLIST);
-	}
-	else {
-		cheatAPI::setCheat();
-	}
+	activeCheats[str]++;
 }
 void cheatAPIEvents::setCheatingAll() {
 	cheatAPI::setCheat();
 }
 void cheatAPIEvents::endCheatingOne(std::string str) {
-	if (str == "ROBTOP") {
-		cheatAPI::endCheat(ROBTOP);
-	}
-	else if (str == "DEMONLIST") {
-		cheatAPI::endCheat(DEMONLIST);
-	}
-	else if (str == "GDDL") {
-		cheatAPI::endCheat(GDDL);
-	}
-	else if (str == "MODMAKEROPINION") {
-		cheatAPI::endCheat(MODMAKEROPINION);
-	}
-	else if (str == "AREDL") {
-		cheatAPI::endCheat(AREDL);
-	}
-	else if (str == "PEMONLIST") {
-		cheatAPI::endCheat(PEMONLIST);
-	}
-	else {
-		cheatAPI::endCheat();
-	}
+	activeCheats[str]--;
 }
 void cheatAPIEvents::endCheatingAll() {
 	cheatAPI::endCheat();
+}
+
+$on_mod(Loaded) {
+	activeCheats["ROBTOP"]=0;
+	activeCheats["MODMAKEROPINION"]=0;
+	activeCheats["DEMONLIST"]=0;
+	activeCheats["GDDL"]=0;
+	activeCheats["AREDL"]=0;
+	activeCheats["PEMONLIST"]=0;
 }
