@@ -5,6 +5,10 @@
 ![GD Version](https://api.geode-sdk.org/v1/mods/legowiifun.cheat_api/status_badge?stat=gd_version)
 ![Geode Version](https://api.geode-sdk.org/v1/mods/legowiifun.cheat_api/status_badge?stat=geode_version)
 
+# THIS MOD DOES NOT CHANGE GEOMETRY DASH ON ITS OWN
+# IF YOU WANT TO ACTUALLY MAKE CHANGES TO GEOMETRY DASH, DOWNLOAD A MOD MENU
+# THIS MOD IS ONLY USEFUL FOR MOD-TO-MOD COMMUNICATION (MORE USEFUL FOR DEVELOPERS)
+
 To use as a dependency, use `#include <legowiifun.cheatAPI/cheatAPI.hpp>`, and in mod.json, under dependencies, put 
 ```
 	"legowiifun.cheat_api": {
