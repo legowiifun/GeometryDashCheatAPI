@@ -5,10 +5,10 @@
 ![GD Version](https://api.geode-sdk.org/v1/mods/legowiifun.cheat_api/status_badge?stat=gd_version)
 ![Geode Version](https://api.geode-sdk.org/v1/mods/legowiifun.cheat_api/status_badge?stat=geode_version)
 
-To use as a dependency, use `#include <legowiifun.cheatAPI/include/cheatAPI.hpp>`, and in mod.json, under dependencies, put 
+To use as a dependency, use `#include <legowiifun.cheatAPI/cheatAPI.hpp>`, and in mod.json, under dependencies, put 
 ```
 	"legowiifun.cheat_api": {
-		"version": ">=1.2.3",
+		"version": ">=1.2.4",
 		"required": true
 	}
 ```
@@ -33,11 +33,11 @@ Enum rulesets:
 You can also interact with this mod using an optional API. First, put this in mod.json: 
 ```
 	"legowiifun.cheat_api": {
-		"version": ">=1.2.3",
+		"version": ">=1.2.4",
 		"required": false
 	}
 ```
-Next, use `#include <legowiifun.cheat_api/include/cheatAPI.hpp>`
+Next, use `#include <legowiifun.cheat_api/cheatAPI.hpp>`
 
 This provides equivilants to each of the methods listed above. These methods use string parameters instead of the Ruleset parameters, so to use them, use the equivilant strings to the ruleset names. eg. to use the robtop ruleset, pass in "ROBTOP"
 

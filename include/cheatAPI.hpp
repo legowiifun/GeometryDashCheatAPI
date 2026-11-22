@@ -1,7 +1,7 @@
 #pragma once
 
 #include <Geode/Geode.hpp>
-#include <Geode/loader/Dispatch.hpp>
+#include <Geode/loader/EventExport.hpp>
 
 #define MY_MOD_ID "legowiifun.cheat_api"
 
@@ -42,10 +42,10 @@ class CHEAT_API_DLL cheatAPI {
 		static void endCheat();
 };
 namespace cheatAPIEvents {
-	inline bool isCheatingSpecific(std::string str) GEODE_EVENT_EXPORT_NORES(&isCheatingSpecific, (str));
-	inline bool isCheatingGeneral() GEODE_EVENT_EXPORT_NORES(&isCheatingGeneral, ());
-	inline void setCheatingOne(std::string str) GEODE_EVENT_EXPORT_NORES(&setCheatingOne, (str));
-	inline void setCheatingAll() GEODE_EVENT_EXPORT_NORES(&setCheatingAll, ());
-	inline void endCheatingOne(std::string str) GEODE_EVENT_EXPORT_NORES(&endCheatingOne, (str));
-	inline void endCheatingAll() GEODE_EVENT_EXPORT_NORES(&endCheatingAll, ());
+	GEODE_EVENT_EXPORT(bool,isCheatingSpecific, (std::string str), (str));
+	GEODE_EVENT_EXPORT(bool,isCheatingGeneral, (), ());
+	GEODE_EVENT_EXPORT(void,setCheatingOne, (std::string str), (str));
+	GEODE_EVENT_EXPORT(void,setCheatingAll, (), ());
+	GEODE_EVENT_EXPORT(void,endCheatingOne, (std::string str), (str));
+	GEODE_EVENT_EXPORT(void,endCheatingAll, (), ());
 }

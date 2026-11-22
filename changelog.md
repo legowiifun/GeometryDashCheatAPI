@@ -1,3 +1,6 @@
+# 1.2.4
+- GD 2.2091 support
+
 # 1.2.3
 - Removed the dispatch-events API
 - GD 2.2081/geode v5 support
