@@ -40,7 +40,7 @@ Ruleset name as string in code | In-game ruleset setting label | Definition / So
 --- | --- | ---
 `"ROBTOP"` | Robtop | Will RobTop rate levels verified with the current game modifications? Can they get you leaderboard-banned?
 `"DEMONLIST"` | Pointercrate | https://pointercrate.com/guidelines/eligibility
-`"GDDL"` | Geometry Dash Levels List | There isn't a link for this, but their rules are probably different from other GD-related websites.
+`"GDDL"` | Geometry Dash Demon Ladder | There isn't a link for this, but their rules are probably different from other GD-related websites.
 `"MODMAKEROPINION"` | Mod Makers Opinion | What is my opinion?
 `"AREDL"` | All Rated Extreme Demons List | https://aredl.net/guidelines
 `"PEMONLIST"` | pemonlist.com | https://pemonlist.com/rules
